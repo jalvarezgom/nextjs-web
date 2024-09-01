@@ -1,0 +1,37 @@
+@use '../settings/utils';
+
+.login{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row-reverse;
+    background-image: url('/lng_carrier.webp');
+    background-size: cover;
+    padding-right: 5%;
+
+    &__container{
+      @apply w-full max-w-lg;
+      @apply flex items-center justify-center h-screen;
+    }
+
+    &__form{
+      @apply flex flex-col gap-6;
+      width: 100%;
+      padding: 40px;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+
+      .bottom{     
+        article {
+          @extend .opt-buttons
+        }
+        button {
+          width: 100%;
+        }
+      }
+  }
+}

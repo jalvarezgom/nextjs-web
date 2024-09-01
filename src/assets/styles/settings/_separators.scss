@@ -1,0 +1,29 @@
+
+@layer components {
+  /* Dashed border */
+  hr.dashed {
+    @apply border-dashed border-t-2 border-primary-light;
+  }
+
+  /* Dotted border */
+  hr.dotted {
+    @apply border-dotted border-t-2 border-primary-light;
+  }
+
+  /* Solid border */
+  hr.solid {
+    @apply border-solid border-t-2 border-primary-light;
+  }
+
+  /* Rounded border */
+  hr.rounded {
+    @apply my-4;
+    @apply border-solid border-t-2 border-primary-light;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+}

@@ -1,0 +1,16 @@
+@layer components {
+  .input {
+    @apply flex flex-col;
+
+    &__input {
+      @apply disabled:bg-light-dark disabled:text-slate-500;
+      @apply py-4 px-8 rounded-md;
+      @apply border border-primary-light ;
+      @apply focus:outline-none focus:ring-1 focus:ring-primary; 
+    }
+    &__helper{
+      @apply mt-2;
+      @apply mt-2 text-sm text-gray-500 dark:text-gray-400;
+    }
+  }
+}
