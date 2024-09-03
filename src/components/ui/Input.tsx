@@ -1,9 +1,6 @@
 import { NextJSInputParams } from "@/types/nextjs";
 
 const Input = ({title, placeholder, helper, id, name, type, value, isDisabled=false, onChange }:NextJSInputParams) => {
-  const handleInputChange = (e: any) => {
-    console.log('e', onChange);
-  };
   
   return (
     <article className="input">

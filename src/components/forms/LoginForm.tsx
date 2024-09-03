@@ -5,7 +5,7 @@ import Button from "../ui/Button";
 import Input from "../ui/Input";
 import Form from "./Form"
 import Image from "next/image";
-import { signIn } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
 import { use, useState } from "react";
 
 const LoginForm = () => {
@@ -20,12 +20,22 @@ const LoginForm = () => {
 
   const handleSubmitLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     console.log('user', user);
-
+    await signOut({
+      redirect: false,
+    })
     let resp = await signIn('credentials', {
       username: user.username,
       password: user.password,
       redirect: false
     });
+    console.log('resp', resp);
+  }
+
+  const handleLogout = async () => {
+    let resp = await signOut({
+      redirect: false,
+      callbackUrl: '/'
+    })
     console.log('resp', resp);
   }
 
