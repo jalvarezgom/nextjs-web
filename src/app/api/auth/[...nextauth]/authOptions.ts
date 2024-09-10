@@ -30,7 +30,7 @@ const authOptions: NextAuthOptions = {
         return {
           ...token,
           access_token: user.token,
-          is_staff: user.is_staff,
+          is_staff: user.is_staff, // TODO: Save user roles in the token
         };
       }
       return token;

@@ -1,6 +1,5 @@
-import api from "./api";
+import api, { API_URL } from "./api";
 
-const API_URL = process.env.API_URL || "http://localhost:3000";
 
 const authService = {
   me: async (access_token: string) => {
