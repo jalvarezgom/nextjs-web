@@ -3,7 +3,7 @@
 
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
-import { ButtonType } from "@/types/button";
+import { ButtonType } from "@/types/button.enum";
 
 
 const TestPage = () => {

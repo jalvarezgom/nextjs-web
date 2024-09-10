@@ -6,37 +6,39 @@ import Input from "../ui/Input";
 import Form from "./Form"
 import Image from "next/image";
 import { signIn, signOut } from "next-auth/react";
-import { use, useState } from "react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { RouterURL } from "@/types/router.enum";
 
 const LoginForm = () => {
+  const router = useRouter();
   const [user, setUser] = useState({
     username: "",
     password: "",
   });
+
+
   const handleInputChange = (e: any) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
-
 
   const handleSubmitLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     console.log('user', user);
     await signOut({
       redirect: false,
     })
-    let resp = await signIn('credentials', {
+    signIn('credentials', {
       username: user.username,
       password: user.password,
       redirect: false
+    }).then((data) => {
+      console.log('resp', data);
+      if (data?.error) {
+        console.log('error', data.error); // TODO: show error message using toast
+        return;
+      }
+      router.push(RouterURL.GUIDE_STYLES);
     });
-    console.log('resp', resp);
-  }
-
-  const handleLogout = async () => {
-    let resp = await signOut({
-      redirect: false,
-      callbackUrl: '/'
-    })
-    console.log('resp', resp);
   }
 
   return (
