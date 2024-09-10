@@ -1,4 +1,4 @@
-import { ButtonType } from "./button"
+import { ButtonType } from "./button.enum"
 
 export interface NextJSSlug {
   params: {

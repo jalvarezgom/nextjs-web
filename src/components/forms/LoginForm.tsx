@@ -1,6 +1,6 @@
 'use client'
 
-import { ButtonType } from "@/types/button";
+import { ButtonType } from "@/types/button.enum";
 import Button from "../ui/Button";
 import Input from "../ui/Input";
 import Form from "./Form"

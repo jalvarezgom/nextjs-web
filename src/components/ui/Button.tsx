@@ -1,6 +1,5 @@
-import { ButtonType } from "@/types/button";
+import { ButtonType } from "@/types/button.enum";
 import { NextJSButtonParams } from "@/types/nextjs";
-import "@/assets/styles/main.scss"
 
 
 const Button = ({ children, type="button", style=ButtonType.PRIMARY, onClick=()=>{}}:NextJSButtonParams) => {
