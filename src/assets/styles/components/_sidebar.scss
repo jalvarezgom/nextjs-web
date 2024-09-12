@@ -1,0 +1,27 @@
+.sidebar{
+  grid-area: "aside";
+  @apply flex flex-col;
+  @apply shadow-lg shadow-primary-light;
+  @apply px-2;
+  @apply bg-primary-llight;
+
+  &--hover{
+    @apply rounded-md;
+    @apply hover:bg-primary-llight ;
+  }
+
+  &__logo{
+    @apply py-6;
+    @apply flex items-center justify-center;
+  }
+
+  &__item{
+    @apply flex gap-2;
+    @apply py-1.5 px-3;
+    @apply text-primary-dark;
+  }
+
+  &__subitem{
+    @apply pl-8;
+  }
+}

@@ -8,7 +8,7 @@ import Image from "next/image";
 import { signIn, signOut } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { RouterURL } from "@/types/router.enum";
+import { Router } from "@/types/router.enum";
 
 const LoginForm = () => {
   const router = useRouter();
@@ -23,7 +23,6 @@ const LoginForm = () => {
   };
 
   const handleSubmitLogin = async (e: React.FormEvent<HTMLFormElement>) => {
-    console.log('user', user);
     await signOut({
       redirect: false,
     })
@@ -32,12 +31,11 @@ const LoginForm = () => {
       password: user.password,
       redirect: false
     }).then((data) => {
-      console.log('resp', data);
       if (data?.error) {
         console.log('error', data.error); // TODO: show error message using toast
         return;
       }
-      router.push(RouterURL.GUIDE_STYLES);
+      router.push(Router.GUIDE_STYLES);
     });
   }
 

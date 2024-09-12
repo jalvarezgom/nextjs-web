@@ -1,6 +1,5 @@
 import api, { API_URL } from "./api";
 
-
 const authService = {
   me: async (access_token: string) => {
     const url = `${API_URL}/auth/me/`;
@@ -16,18 +15,18 @@ const authService = {
     } catch (error) {
       console.error(error);
       throw error;
-    } 
+    }
   },
 
   login: async (username: string, password: string) => {
     const url = `${API_URL}/auth/login/`;
-    try { 
+    try {
       const response = await api.fetch(url, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ username, password }),
       });
-      const data = await response.json(); 
+      const data = await response.json();
       if (!response.ok) {
         throw new Error(data.detail);
       }

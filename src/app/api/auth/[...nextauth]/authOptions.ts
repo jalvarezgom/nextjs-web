@@ -16,7 +16,6 @@ const authOptions: NextAuthOptions = {
           username: string;
           password: string;
         };
-        console.log("Credentials", credentials);
         const tokenData = await authService.login(username, password);
         console.log("TokenData", tokenData);
         return { ...tokenData };

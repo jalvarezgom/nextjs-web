@@ -1,5 +1,6 @@
 @use "./general/normalize";
 @use "./settings/settings.scss";
+@use "./components/components.scss";
 @use "./pages/pages.scss";
 
 
@@ -9,4 +10,5 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./general/layout.scss";
 @import "./test.scss";

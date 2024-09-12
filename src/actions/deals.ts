@@ -1,8 +1,8 @@
 import api, { API_URL } from "./api";
 
-const counterpartiesService = {
+const dealsService = {
   getAll: async () => {
-    const url = `${API_URL}/deals/counterparties/`;
+    const url = `${API_URL}/deals/`;
     try {
       const response = await api.fetch(url);
       const data = await response.json();
@@ -15,8 +15,8 @@ const counterpartiesService = {
       throw error;
     }
   },
-  get: async (id: number) => {
-    const url = `${API_URL}/deals/counterparties/${id}/`;
+  get: async (id: string) => {
+    const url = `${API_URL}/deals/${id}/`;
     try {
       const response = await api.fetch(url);
       const data = await response.json();
@@ -31,4 +31,4 @@ const counterpartiesService = {
   },
 };
 
-export default counterpartiesService;
+export default dealsService;

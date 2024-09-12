@@ -39,7 +39,7 @@ const TestPage = () => {
   } 
 
   const test_fetch_data = async () => {
-    const data = await counterpartiesService.get_all();
+    const data = await counterpartiesService.getAll();
     console.log(data);
     const data2 = await counterpartiesService.get(2);
     console.log(data2);
@@ -56,7 +56,7 @@ const TestPage = () => {
 
   return (
     <>
-      <main className="flex flex-col min-h-screen  items-center p-24">
+      <main className="flex flex-col min-h-screen w-full items-center p-24">
         <p>Guia de estilos</p>
         <p className="pt-5">Botones</p>
         <section>
